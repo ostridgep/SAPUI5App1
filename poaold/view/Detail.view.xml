@@ -54,16 +54,8 @@
 						icon="sap-icon://notes">
 
 					</IconTabFilter>
-					<IconTabFilter
-						key="Map"
-						icon="sap-icon://map-2">
 
-					</IconTabFilter>
-					<IconTabFilter
-						key="Objects"
-						icon="sap-icon://functional-location">
 
-					</IconTabFilter>
 					<IconTabFilter
 						key="Partners"
 						icon="sap-icon://customer">
