@@ -9,8 +9,7 @@
 		title=" {i18n>lineItemTitle}"
 		showNavButton="true"
 		navButtonPress="handleNavBack"
-		class="sapUiFioriObjectPage"
-		showFooter="{device>/isNoPhone}" >
+		class="sapUiFioriObjectPage" >
 		<footer>
 			<Toolbar>
 							<ToolbarSpacer/>
