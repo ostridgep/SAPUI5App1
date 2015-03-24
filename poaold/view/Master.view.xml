@@ -1,0 +1,97 @@
+<core:View
+	controllerName="view.Master"
+	xmlns="sap.m"
+	xmlns:me="sap.me"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" >
+	<Page
+		id="page"
+		title="My Jobs"
+		showFooter="{device>/isNoPhone}" >
+		<subHeader>
+			<Bar
+				id="searchBar">
+				<contentMiddle>
+					<SearchField
+						id="searchField"
+						showRefreshButton="{device>/isNoTouch}"
+						placeholder="Search for a Job"
+						search="handleSearch"
+						tooltip="{i18n>masterSearchTooltip}"
+						width="100%" >
+					</SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Select
+						id="filterSelect"
+						change="handleFilterChange"
+						icon="sap-icon://filter"
+						type="IconOnly"
+						autoAdjustWidth="true">
+						<core:Item
+							key="All"
+							text="All"/>
+						<core:Item
+							key="ZM01"
+							text="ZM01"/>
+						<core:Item
+							key="ZM02"
+							text="ZM02"/>
+					</Select>
+				</contentRight>
+			</Bar>
+		</footer>
+		<content>
+
+			<List
+				id="list"
+
+				visible="false"
+				select="handleListSelect"
+				threshhold="50"
+				noDataText="{i18n>masterListNoData}"
+				mode="{device>/listMode}"
+				items="{
+					path : '/order',
+					sorter : {
+						path : 'orderno',
+						descending : false
+					}
+				}">
+
+				<ObjectListItem
+					title="{shorttext}"
+					number="{orderno}"
+					numberUnit="{type}"
+					press="handleListItemPress"
+					type="{device>/listItemType}" >
+					<attributes>
+						<ObjectAttribute
+							text="{contact}" />
+						<ObjectAttribute
+							text="{shortext}" />
+					</attributes>
+					<firstStatus>
+						<ObjectStatus
+							text="{startdate}" />
+					</firstStatus>
+				</ObjectListItem>
+			</List>
+			<HBox
+				height="3em"
+				justifyContent="Center"
+				alignItems="Center" >
+				<BusyIndicator
+					id="busyIndicator"
+					class="sapUiSmallMarginTop"
+					visible="true"
+					text="{i18n>masterBusyText}" />
+			</HBox>
+		</content>
+	</Page>
+</core:View>

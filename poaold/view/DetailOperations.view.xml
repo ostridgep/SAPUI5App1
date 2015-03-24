@@ -1,0 +1,51 @@
+<core:View
+	controllerName="view.DetailOperations"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" >
+			<Table
+				id="lineItemList"
+				items="{path:'operation'}" >
+				<headerToolbar>
+					<Toolbar>
+						<content>
+							<Label text="Operations" />
+							<ToolbarSpacer />
+
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<header><Label text="OpNo"/></header>
+					</Column>
+
+					<Column
+						width="7em"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						hAlign="Center" >
+						<header><Label text="Start Date" /></header>
+					</Column>
+					<Column
+						hAlign="Right" >
+						<header><Label text="Duration" /></header>
+					</Column>
+				</columns>
+				<ColumnListItem
+					type="Navigation"
+					press="handleOperationItemPress" >
+					<cells>
+						<ObjectIdentifier
+							title="{opno}"
+							text="{shorttext}"/>
+
+							<Text
+								text="{startdate}"/>
+						<ObjectNumber
+							number="{duration}"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+</core:View>

@@ -1,0 +1,21 @@
+<core:View
+	controllerName="view.DetailInfo"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" >
+	
+
+	<form:SimpleForm
+		id="form"
+		minWidth="1024"
+		maxContainerCols="2" >
+		<Label text="Contact"/>
+		<Text text="{contact}"/>
+		<Label text="Address"/>
+		<Text text="{address}"/>
+		<Label text="Tel No"/>
+		<Text text="{telno}"/>
+		
+	</form:SimpleForm>
+</core:View>
