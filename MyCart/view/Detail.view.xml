@@ -89,6 +89,14 @@
 						<header><Label text="Price" /></header>
 					</Column>
 				</columns>
+																	<swipeContent>
+					<Button
+						id="ItemApproveButton"
+						text="Confirm Receipt"
+						type="Accept"
+						press="handleListItemApprove">
+					</Button>
+				</swipeContent>
 				<ColumnListItem
 					type="Navigation"
 					press="handleLineItemPress" >
@@ -106,10 +114,12 @@
 									path:'DeliveryDate',
 									formatter:'sap.ui.demo.cart.util.formatter.Date'
 								}"/>
+
 						<ObjectNumber
 							number="{Amount}"
 							unit="{CurrencyCode}" />
 					</cells>
+
 				</ColumnListItem>
 			</Table>
 		</content>
